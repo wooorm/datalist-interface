@@ -40,11 +40,11 @@ describe('DatalistInterface#all()', function () {
     });
 });
 
-describe('DatalistInterface#add(filler) and DatalistInterface#remove(filler)',
+describe('DatalistInterface#add(value) and DatalistInterface#remove(value)',
     function () {
         var mammals = new DatalistInterface(['colugo', 'human']);
 
-        it('should add and remove a filler', function () {
+        it('should add and remove a value', function () {
             assert(mammals.is('unicorn') === false);
 
             mammals.add('unicorn');
@@ -67,7 +67,7 @@ describe('DatalistInterface#add(filler) and DatalistInterface#remove(filler)',
             assert(mammals.is('doge') === false);
         });
 
-        it('should fail silently when removing a non-existing filler',
+        it('should fail silently when removing a non-existing value',
             function () {
                 assert(mammals.is('unicorn') === false);
                 mammals.remove('unicorn');
