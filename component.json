@@ -1,0 +1,15 @@
+{
+  "name": "datalist-interface",
+  "version": "0.0.1",
+  "description": "Simple interface for a list functioning as a database",
+  "license": "MIT",
+  "keywords": [
+    "data",
+    "word",
+    "list"
+  ],
+  "repository": "wooorm/datalist-interface",
+  "scripts" : [
+    "index.js"
+  ]
+}
