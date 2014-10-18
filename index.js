@@ -81,6 +81,17 @@ function all() {
 }
 
 /**
+ * Stringify all values.
+ *
+ * @this DatalistInterface
+ * @return {string}
+ */
+
+function toString() {
+    return this.values.toString();
+}
+
+/**
  * Expose methods on prototype.
  */
 
@@ -92,6 +103,7 @@ datalistInterfacePrototype.add = add;
 datalistInterfacePrototype.remove = remove;
 datalistInterfacePrototype.is = is;
 datalistInterfacePrototype.all = all;
+datalistInterfacePrototype.toString = toString;
 
 /**
  * Expose `DatalistInterface`.

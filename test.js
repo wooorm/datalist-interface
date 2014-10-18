@@ -28,6 +28,16 @@ describe('DatalistInterface#is(value)', function () {
     });
 });
 
+describe('DatalistInterface#toString()', function () {
+    var fish;
+
+    fish = new DatalistInterface(['shark', 'tuna']);
+
+    it('should return values delimited by commas', function () {
+        assert(fish.toString() === 'shark,tuna');
+    });
+});
+
 describe('DatalistInterface#all()', function () {
     var mammals,
         all;
