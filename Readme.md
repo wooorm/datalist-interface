@@ -67,16 +67,18 @@ var fish = new DatalistInterface(['shark', 'tuna']);
 
 The following functions are available on the instance:
 
-### DatalistInterface#is(word)
+### DatalistInterface#is(value)
+
+> Alias: `DatalistInterface#has(value)`
 
 ```js
 fish.is('shark'); // true
 fish.is('human'); // false
 ```
 
-Returns whether (true) or not (false) a given word is a filler word.
+Returns whether (`true`) or not (`false`) a given value is in the list.
 
-### DatalistInterface#add(word...)
+### DatalistInterface#add(value...)
 
 ```js
 fish.add('giant grouper', 'red lionfish');
@@ -84,7 +86,7 @@ fish.add('giant grouper', 'red lionfish');
 
 Add all arguments. Returns self.
 
-### DatalistInterface#remove(word...)
+### DatalistInterface#remove(value...)
 
 ```js
 fish.remove('giant grouper', 'reindeer');
@@ -95,11 +97,21 @@ No error is thrown when non-existent values are removed.
 
 ### DatalistInterface#all()
 
+> Alias: `DatalistInterface#valueOf()`
+
 ```js
 fish.all(); // ['shark', 'tuna', 'red lionfish']
 ```
 
 Return the list as an `Array`.
+
+### DatalistInterface#toString()
+
+```js
+fish.toString(); // 'shark,tuna,red lionfish'
+```
+
+Return the list as a `string`.
 
 ## License
 
