@@ -2,7 +2,7 @@
 
 var DatalistInterface, assert;
 
-DatalistInterface = require('..');
+DatalistInterface = require('./');
 assert = require('assert');
 
 describe('DatalistInterface#is(value)', function () {
