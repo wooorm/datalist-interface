@@ -17,10 +17,17 @@ function DatalistInterface(values) {
  *
  * @this DatalistInterface
  * @param {...*} values
+ * @return DatalistInterface Self.
  */
 
 function add(/* values... */) {
-    this.values.push.apply(this.values, arguments);
+    var self;
+
+    self = this;
+
+    self.values.push.apply(self.values, arguments);
+
+    return self;
 }
 
 /**
@@ -28,6 +35,7 @@ function add(/* values... */) {
  *
  * @this DatalistInterface
  * @param {...*} values
+ * @return DatalistInterface Self.
  */
 
 function remove(/* values... */) {
@@ -45,6 +53,8 @@ function remove(/* values... */) {
             values.splice(position, 1);
         }
     }
+
+    return this;
 }
 
 /**

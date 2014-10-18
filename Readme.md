@@ -1,6 +1,6 @@
 # datalist-interface [![Build Status](https://travis-ci.org/wooorm/datalist-interface.svg?branch=master)](https://travis-ci.org/wooorm/datalist-interface) [![Coverage Status](https://img.shields.io/coveralls/wooorm/datalist-interface.svg)](https://coveralls.io/r/wooorm/datalist-interface?branch=master)
 
-A simple interface for a list functioning as a database.
+A simple interface for a list.
 
 ## Installation
 
@@ -22,10 +22,9 @@ $ bower install datalist-interface
 ## Usage
 
 ```js
-var DatalistInterface = require('datalist-interface'),
-    mammals;
+var DatalistInterface = require('datalist-interface');
 
-mammals = new DatalistInterface([
+var mammals = new DatalistInterface([
     'common vampire bat',
     'virginia opossum',
     'eastern grey kangaroo',
@@ -49,11 +48,9 @@ mammals = new DatalistInterface([
 mammals.is('human'); // true
 mammals.is('unicorn'); // false
 
-mammals.add('unicorn');
-mammals.is('unicorn'); // true
+mammals.add('unicorn').is('unicorn'); // true
 
-mammals.remove('unicorn');
-mammals.is('unicorn'); // false
+mammals.remove('unicorn').is('unicorn'); // false
 ```
 
 ## API
@@ -63,10 +60,9 @@ mammals.is('unicorn'); // false
 **datalist-interface** exports a constructor, which can be passed an array.
 
 ```js
-var DatalistInterface = require('datalist-interface'),
-    fish;
+var DatalistInterface = require('datalist-interface');
 
-fish = new DatalistInterface(['shark', 'tuna']);
+var fish = new DatalistInterface(['shark', 'tuna']);
 ```
 
 The following functions are available on the instance:
@@ -86,8 +82,7 @@ Returns whether (true) or not (false) a given word is a filler word.
 fish.add('giant grouper', 'red lionfish');
 ```
 
-Adds all arguments to the internal database.
-Given values are **NOT** validated.
+Add all arguments. Returns self.
 
 ### DatalistInterface#remove(word...)
 
@@ -95,8 +90,8 @@ Given values are **NOT** validated.
 fish.remove('giant grouper', 'reindeer');
 ```
 
-Removes all arguments from the internal database.
-Given values are **NOT** validated; no error is thrown when non-existent values are removed.
+Remove all arguments. Returns self.
+No error is thrown when non-existent values are removed.
 
 ### DatalistInterface#all()
 
@@ -104,7 +99,7 @@ Given values are **NOT** validated; no error is thrown when non-existent values 
 fish.all(); // ['shark', 'tuna', 'red lionfish']
 ```
 
-Return the values (as an Array) in the internal database.
+Return the list as an `Array`.
 
 ## License
 
