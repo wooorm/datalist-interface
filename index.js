@@ -103,6 +103,7 @@ datalistInterfacePrototype.add = add;
 datalistInterfacePrototype.remove = remove;
 datalistInterfacePrototype.is = is;
 datalistInterfacePrototype.all = all;
+datalistInterfacePrototype.valueOf = all;
 datalistInterfacePrototype.toString = toString;
 
 /**
