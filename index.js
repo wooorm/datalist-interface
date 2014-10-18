@@ -1,44 +1,90 @@
 'use strict';
 
-var datalistInterfacePrototype;
+/**
+ * An interface for a list of items.
+ *
+ * @constructor
+ * @param {Array.<*>} values
+ */
 
 function DatalistInterface(values) {
     this.values = [];
     this.add.apply(this, values);
 }
 
-datalistInterfacePrototype = DatalistInterface.prototype;
+/**
+ * Add all arguments.
+ *
+ * @this DatalistInterface
+ * @param {...*} values
+ */
 
 function add(/* values... */) {
     this.values.push.apply(this.values, arguments);
 }
 
+/**
+ * Remove all arguments.
+ *
+ * @this DatalistInterface
+ * @param {...*} values
+ */
+
 function remove(/* values... */) {
-    var values = this.values,
-        iterator = -1,
-        length = arguments.length,
-        index;
+    var values,
+        index,
+        position;
 
-    while (++iterator < length) {
-        index = values.indexOf(arguments[iterator]);
+    values = this.values;
+    index = arguments.length;
 
-        if (index !== -1) {
-            values.splice(index, 1);
+    while (index--) {
+        position = values.indexOf(arguments[index]);
+
+        if (position !== -1) {
+            values.splice(position, 1);
         }
     }
 }
+
+/**
+ * Whether or not `value` is in context.
+ *
+ * @this DatalistInterface
+ * @param {*} value
+ * @return {boolean}
+ */
 
 function is(value) {
     return this.values.indexOf(value) !== -1;
 }
 
+/**
+ * Get all values.
+ *
+ * @this DatalistInterface
+ * @return {Array.<*>}
+ */
+
 function all() {
     return this.values.concat();
 }
+
+/**
+ * Expose methods on prototype.
+ */
+
+var datalistInterfacePrototype;
+
+datalistInterfacePrototype = DatalistInterface.prototype;
 
 datalistInterfacePrototype.add = add;
 datalistInterfacePrototype.remove = remove;
 datalistInterfacePrototype.is = is;
 datalistInterfacePrototype.all = all;
 
-exports = module.exports = DatalistInterface;
+/**
+ * Expose `DatalistInterface`.
+ */
+
+module.exports = DatalistInterface;
