@@ -97,7 +97,7 @@ No error is thrown when non-existent values are removed.
 
 ### DatalistInterface#all()
 
-> Alias: `DatalistInterface#valueOf()`
+> Alias: `DatalistInterface#valueOf()`, `DatalistInterface#toJSON()`
 
 ```js
 fish.all(); // ['shark', 'tuna', 'red lionfish']

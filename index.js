@@ -105,6 +105,7 @@ datalistInterfacePrototype.is = is;
 datalistInterfacePrototype.has = is;
 datalistInterfacePrototype.all = all;
 datalistInterfacePrototype.valueOf = all;
+datalistInterfacePrototype.toJSON = all;
 datalistInterfacePrototype.toString = toString;
 
 /**
