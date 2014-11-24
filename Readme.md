@@ -14,7 +14,7 @@ Component.js:
 $ component install wooorm/datalist-interface
 ```
 
-Component.js:
+Bower:
 ```sh
 $ bower install datalist-interface
 ```
@@ -115,4 +115,4 @@ Return the list as a `string`.
 
 ## License
 
-MIT © Titus Wormer
+MIT © [Titus Wormer](http://wooorm.com)
