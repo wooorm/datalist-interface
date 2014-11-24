@@ -1,4 +1,4 @@
-# datalist-interface [![Build Status](https://travis-ci.org/wooorm/datalist-interface.svg?branch=master)](https://travis-ci.org/wooorm/datalist-interface) [![Coverage Status](https://img.shields.io/coveralls/wooorm/datalist-interface.svg)](https://coveralls.io/r/wooorm/datalist-interface?branch=master)
+# datalist-interface [![Build Status](https://img.shields.io/travis/wooorm/datalist-interface.svg?style=flat)](https://travis-ci.org/wooorm/datalist-interface) [![Coverage Status](https://img.shields.io/coveralls/wooorm/datalist-interface.svg?style=flat)](https://coveralls.io/r/wooorm/datalist-interface?branch=master)
 
 A simple interface for a list.
 
