@@ -6,7 +6,6 @@
  * @constructor
  * @param {Array.<*>} values
  */
-
 function DatalistInterface(values) {
     this.values = [];
     this.add.apply(this, values);
@@ -16,10 +15,8 @@ function DatalistInterface(values) {
  * Add all arguments.
  *
  * @this DatalistInterface
- * @param {...*} values
- * @return DatalistInterface Self.
+ * @return {DatalistInterface} - Self.
  */
-
 function add(/* values... */) {
     var self;
 
@@ -34,10 +31,8 @@ function add(/* values... */) {
  * Remove all arguments.
  *
  * @this DatalistInterface
- * @param {...*} values
- * @return DatalistInterface Self.
+ * @return {DatalistInterface} - Self.
  */
-
 function remove(/* values... */) {
     var values,
         index,
@@ -64,7 +59,6 @@ function remove(/* values... */) {
  * @param {*} value
  * @return {boolean}
  */
-
 function is(value) {
     return this.values.indexOf(value) !== -1;
 }
@@ -75,7 +69,6 @@ function is(value) {
  * @this DatalistInterface
  * @return {Array.<*>}
  */
-
 function all() {
     return this.values.concat();
 }
@@ -86,12 +79,11 @@ function all() {
  * @this DatalistInterface
  * @return {string}
  */
-
 function toString() {
     return this.values.toString();
 }
 
-/**
+/*
  * Expose methods on prototype.
  */
 
@@ -108,7 +100,7 @@ datalistInterfacePrototype.valueOf = all;
 datalistInterfacePrototype.toJSON = all;
 datalistInterfacePrototype.toString = toString;
 
-/**
+/*
  * Expose `DatalistInterface`.
  */
 
