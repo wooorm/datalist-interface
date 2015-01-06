@@ -4,18 +4,21 @@ A simple interface for a list.
 
 ## Installation
 
-npm:
-```sh
+[npm](https://docs.npmjs.com/cli/install):
+
+```bash
 $ npm install datalist-interface
 ```
 
-Component.js:
-```sh
+[Component.js](https://github.com/componentjs/component):
+
+```bash
 $ component install wooorm/datalist-interface
 ```
 
-Bower:
-```sh
+[Bower](http://bower.io/#install-packages):
+
+```bash
 $ bower install datalist-interface
 ```
 
