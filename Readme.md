@@ -22,6 +22,12 @@ $ component install wooorm/datalist-interface
 $ bower install datalist-interface
 ```
 
+[Duo](http://duojs.org/#getting-started):
+
+```javascript
+var DatalistInterface = require('wooorm/datalist-interface');
+```
+
 ## Usage
 
 ```js
