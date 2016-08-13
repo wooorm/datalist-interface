@@ -1,113 +1,97 @@
+/**
+ * @author Titus Wormer
+ * @copyright 2014 Titus Wormer
+ * @license MIT
+ * @module datalist-interface
+ * @fileoverview Test suite for `datalist-interface`.
+ */
+
 'use strict';
 
-/*
- * Dependencies.
- */
+/* Dependencies. */
+var test = require('tape');
+var Interface = require('./');
 
-var DatalistInterface,
-    assert;
+/* Tests. */
+test('#is(value)', function (t) {
+  var fish = new Interface(['shark', 'tuna']);
 
-DatalistInterface = require('./');
-assert = require('assert');
+  t.equal(
+    fish.is('shark'),
+    true,
+    'should return true if a value is in the database'
+  );
 
-/*
- * Tests.
- */
+  t.equal(
+    fish.is('unicorn'),
+    false,
+    'should return false if a value is not in the database'
+  );
 
-describe('DatalistInterface#is(value)', function () {
-    var fish;
-
-    fish = new DatalistInterface(['shark', 'tuna']);
-
-    it('should return true if a value is in the database', function () {
-        assert(fish.is('shark') === true);
-    });
-
-    it('should return false if a value is not in the database', function () {
-        assert(fish.is('unicorn') === false);
-    });
+  t.end();
 });
 
-describe('DatalistInterface#toString()', function () {
-    var fish;
+test('#toString()', function (t) {
+  var fish = new Interface(['shark', 'tuna']);
 
-    fish = new DatalistInterface(['shark', 'tuna']);
+  t.equal(
+    fish.toString(),
+    'shark,tuna',
+    'should return values delimited by commas'
+  );
 
-    it('should return values delimited by commas', function () {
-        assert(fish.toString() === 'shark,tuna');
-    });
+  t.end();
 });
 
-describe('DatalistInterface#all()', function () {
-    var mammals,
-        all;
+test('#all()', function (t) {
+  var mammals = new Interface(['colugo', 'human']);
+  var all = mammals.all();
 
-    mammals = new DatalistInterface(['colugo', 'human']);
+  t.ok(Array.isArray(all), 'should return an array');
 
-    all = mammals.all();
+  t.deepEqual(
+    all,
+    ['colugo', 'human'],
+    'should return all values in context'
+  );
 
-    it('should return an array', function () {
-        assert('length' in all);
-        assert(typeof all === 'object');
-    });
+  t.test('should be immutable', function (st) {
+    all.push('unicorn');
 
-    it('should return all values in context', function () {
-        assert(all.indexOf('colugo') !== -1);
-        assert(all.indexOf('human') !== -1);
+    st.equal(mammals.is('unicorn'), false);
+    st.equal(mammals.all().indexOf('unicorn'), -1);
+    st.end();
+  });
 
-        assert(all.length === 2);
-    });
-
-    it('should be immutable', function () {
-        all.push('unicorn');
-
-        assert(mammals.is('unicorn') === false);
-
-        assert(mammals.all().indexOf('unicorn') === -1);
-    });
+  t.end();
 });
 
-describe('DatalistInterface#add(value) and DatalistInterface#remove(value)',
-    function () {
-        var mammals;
+test('#add() and #remove()', function (t) {
+  var mammals = new Interface(['colugo', 'human']);
 
-        mammals = new DatalistInterface(['colugo', 'human']);
+  t.equal(mammals.add('unicorn'), mammals, '`add` should return self');
+  t.equal(mammals.is('unicorn'), true, 'should add values');
 
-        it('should add or remove `value`', function () {
-            assert(mammals.is('unicorn') === false);
+  t.equal(mammals.remove('unicorn'), mammals, '`remove` should return self');
+  t.equal(mammals.is('unicorn'), false, 'should remove values');
 
-            mammals.add('unicorn');
+  t.deepEqual(
+    mammals.add('unicorn', 'doge').all(),
+    ['colugo', 'human', 'unicorn', 'doge'],
+    'should add all arguments'
+  );
 
-            assert(mammals.is('unicorn') === true);
+  t.deepEqual(
+    mammals.remove('unicorn', 'doge').all(),
+    ['colugo', 'human'],
+    'should remove all arguments'
+  );
 
-            mammals.remove('unicorn');
+  t.deepEqual(
+    mammals.remove('unicorn').all(),
+    ['colugo', 'human'],
+    'should ignore removing non-existing `value`'
+  );
 
-            assert(mammals.is('unicorn') === false);
-        });
-
-        it('should add or remove all arguments', function () {
-            assert(mammals.is('unicorn') === false);
-            assert(mammals.is('doge') === false);
-
-            mammals.add('unicorn', 'doge');
-
-            assert(mammals.is('unicorn') === true);
-            assert(mammals.is('doge') === true);
-
-            mammals.remove('unicorn', 'doge');
-
-            assert(mammals.is('unicorn') === false);
-            assert(mammals.is('doge') === false);
-        });
-
-        it('should fail silently when removing non-existing `value`',
-            function () {
-                assert(mammals.is('unicorn') === false);
-
-                mammals.remove('unicorn');
-
-                assert(mammals.is('unicorn') === false);
-            }
-        );
-    }
-);
+  t.test();
+});

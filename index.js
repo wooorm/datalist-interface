@@ -1,4 +1,24 @@
+/**
+ * @author Titus Wormer
+ * @copyright 2014 Titus Wormer
+ * @license MIT
+ * @module datalist-interface
+ * @fileoverview Parse and stringify CSS declarations.
+ */
+
 'use strict';
+
+/* Expose. */
+module.exports = DatalistInterface;
+
+/* Methods. */
+var proto = DatalistInterface.prototype;
+
+proto.add = add;
+proto.remove = remove;
+proto.is = proto.has = is;
+proto.all = proto.valueOf = proto.toJSON = all;
+proto.toString = toString;
 
 /**
  * An interface for a list of items.
@@ -7,8 +27,8 @@
  * @param {Array.<*>} values
  */
 function DatalistInterface(values) {
-    this.values = [];
-    this.add.apply(this, values);
+  this.values = [];
+  this.add.apply(this, values);
 }
 
 /**
@@ -18,13 +38,11 @@ function DatalistInterface(values) {
  * @return {DatalistInterface} - Self.
  */
 function add(/* values... */) {
-    var self;
+  var self = this;
 
-    self = this;
+  self.values.push.apply(self.values, arguments);
 
-    self.values.push.apply(self.values, arguments);
-
-    return self;
+  return self;
 }
 
 /**
@@ -34,22 +52,19 @@ function add(/* values... */) {
  * @return {DatalistInterface} - Self.
  */
 function remove(/* values... */) {
-    var values,
-        index,
-        position;
+  var values = this.values;
+  var index = arguments.length;
+  var position;
 
-    values = this.values;
-    index = arguments.length;
+  while (index--) {
+    position = values.indexOf(arguments[index]);
 
-    while (index--) {
-        position = values.indexOf(arguments[index]);
-
-        if (position !== -1) {
-            values.splice(position, 1);
-        }
+    if (position !== -1) {
+      values.splice(position, 1);
     }
+  }
 
-    return this;
+  return this;
 }
 
 /**
@@ -60,7 +75,7 @@ function remove(/* values... */) {
  * @return {boolean}
  */
 function is(value) {
-    return this.values.indexOf(value) !== -1;
+  return this.values.indexOf(value) !== -1;
 }
 
 /**
@@ -70,7 +85,7 @@ function is(value) {
  * @return {Array.<*>}
  */
 function all() {
-    return this.values.concat();
+  return this.values.concat();
 }
 
 /**
@@ -80,28 +95,5 @@ function all() {
  * @return {string}
  */
 function toString() {
-    return this.values.toString();
+  return this.values.toString();
 }
-
-/*
- * Expose methods on prototype.
- */
-
-var datalistInterfacePrototype;
-
-datalistInterfacePrototype = DatalistInterface.prototype;
-
-datalistInterfacePrototype.add = add;
-datalistInterfacePrototype.remove = remove;
-datalistInterfacePrototype.is = is;
-datalistInterfacePrototype.has = is;
-datalistInterfacePrototype.all = all;
-datalistInterfacePrototype.valueOf = all;
-datalistInterfacePrototype.toJSON = all;
-datalistInterfacePrototype.toString = toString;
-
-/*
- * Expose `DatalistInterface`.
- */
-
-module.exports = DatalistInterface;

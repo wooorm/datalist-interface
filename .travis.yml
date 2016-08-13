@@ -1,13 +1,26 @@
 language: node_js
-script: npm run-script test-travis
 node_js:
-- '0.10'
 - '0.11'
-after_script: npm install coveralls@2.10.0 && cat ./coverage/lcov.info | coveralls
+- '0.12'
+- '4.0'
+- '5.0'
+- '6.0'
+after_success:
+- bash <(curl -s https://codecov.io/bash)
 deploy:
-  provider: npm
-  email: tituswormer@gmail.com
-  api_key:
-    secure: kVRUR6vE8yHb3zDblXnup0k6t8p7max0aK++DYBZCSpnIF+rIzqTjg4FdDv8Hv0Hdi/52PiYrBSBw8VdCRGhQlwmVXzNOllAy7+ucZya9zlpmpvken7bjQDifgbKqkxplMyNaUgLggDTEVyfIcPbBAagiV/hrp+M6/viLw++GN0=
-  on:
-    repo: wooorm/datalist-interface
+  - provider: npm
+    email: tituswormer@gmail.com
+    api_key:
+      secure: h6qVFUtXwVplCYLTp6DIVzpuFo/tmrsadozbFygZSq9vYlcbCtOl4la9w/7fEgzOrCaBlpny7mB9ff0f2VZfLcmFyjt99bEWzP18cCRFzTSN99SnyrSp36noOIcwo4frgwXE2JxPUFs7LmjpuF+3atYmyEWVZSxAE9dwPxTOfiQ=
+    on:
+      tags: true
+      node: '5.0'
+  - provider: releases
+    api_key:
+      secure: Y4+OuFy2n4MrYXbbd1cTYhXpaSVpT89XNauz5tuTsB7fJxRzJiTviLkZtEzWOKmFAxKusH8G7IWz3jvDSloPIEdm/N15vHeGl4d7WhGmQ/BfOi8LtPEdk6HTHTZ0+GvT4vVF13J4dJhxmZnalX0t5UWkzxKQafTI/4yQkqs1X4E=
+    file:
+      - "datalist-interface.js"
+      - "datalist-interface.min.js"
+    on:
+      tags: true
+      node: '6.0'
