@@ -3,7 +3,7 @@
  * @copyright 2014 Titus Wormer
  * @license MIT
  * @module datalist-interface
- * @fileoverview Parse and stringify CSS declarations.
+ * @fileoverview Simple interface for a list functioning as a database.
  */
 
 'use strict';

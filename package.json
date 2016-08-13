@@ -35,7 +35,7 @@
   },
   "scripts": {
     "build-md": "remark . --quiet --frail",
-    "build-bundle": "browserify index.js -s cssDeclarations > datalist-interface.js",
+    "build-bundle": "browserify index.js -s DatalistInterface > datalist-interface.js",
     "build-mangle": "esmangle datalist-interface.js > datalist-interface.min.js",
     "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
     "lint": "xo",
