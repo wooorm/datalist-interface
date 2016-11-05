@@ -16,24 +16,24 @@ npm install datalist-interface
 var DatalistInterface = require('datalist-interface');
 
 var mammals = new DatalistInterface([
-    'common vampire bat',
-    'virginia opossum',
-    'eastern grey kangaroo',
-    'tasmanian devil',
-    'human',
-    'northern elephant seal',
-    'fox squirrel',
-    'tree pangolin',
-    'african elephant',
-    'platypus',
-    'colugo',
-    'reindeer',
-    'humpback whale',
-    'star-nosed mole',
-    'giant panda',
-    'giant armadillo',
-    'plains zebra',
-    'black and rufous elephant shrew'
+  'common vampire bat',
+  'virginia opossum',
+  'eastern grey kangaroo',
+  'tasmanian devil',
+  'human',
+  'northern elephant seal',
+  'fox squirrel',
+  'tree pangolin',
+  'african elephant',
+  'platypus',
+  'colugo',
+  'reindeer',
+  'humpback whale',
+  'star-nosed mole',
+  'giant panda',
+  'giant armadillo',
+  'plains zebra',
+  'black and rufous elephant shrew'
 ]);
 
 mammals.is('human'); // true
