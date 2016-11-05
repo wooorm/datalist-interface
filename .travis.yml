@@ -1,10 +1,9 @@
 language: node_js
 node_js:
 - '4.0'
-- '5.0'
-- '6.0'
+- '7.0'
 sudo: false
-after_success: bash <(curl -s https://codecov.io/bash)
+after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
   - provider: npm
     email: tituswormer@gmail.com
@@ -12,7 +11,7 @@ deploy:
       secure: h6qVFUtXwVplCYLTp6DIVzpuFo/tmrsadozbFygZSq9vYlcbCtOl4la9w/7fEgzOrCaBlpny7mB9ff0f2VZfLcmFyjt99bEWzP18cCRFzTSN99SnyrSp36noOIcwo4frgwXE2JxPUFs7LmjpuF+3atYmyEWVZSxAE9dwPxTOfiQ=
     on:
       tags: true
-      node: '5.0'
+      node: '4.0'
   - provider: releases
     api_key:
       secure: Y4+OuFy2n4MrYXbbd1cTYhXpaSVpT89XNauz5tuTsB7fJxRzJiTviLkZtEzWOKmFAxKusH8G7IWz3jvDSloPIEdm/N15vHeGl4d7WhGmQ/BfOi8LtPEdk6HTHTZ0+GvT4vVF13J4dJhxmZnalX0t5UWkzxKQafTI/4yQkqs1X4E=
@@ -21,4 +20,4 @@ deploy:
       - "datalist-interface.min.js"
     on:
       tags: true
-      node: '6.0'
+      node: '7.0'
