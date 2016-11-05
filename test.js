@@ -1,11 +1,3 @@
-/**
- * @author Titus Wormer
- * @copyright 2014 Titus Wormer
- * @license MIT
- * @module datalist-interface
- * @fileoverview Test suite for `datalist-interface`.
- */
-
 'use strict';
 
 /* Dependencies. */

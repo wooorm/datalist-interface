@@ -1,11 +1,3 @@
-/**
- * @author Titus Wormer
- * @copyright 2014 Titus Wormer
- * @license MIT
- * @module datalist-interface
- * @fileoverview Simple interface for a list functioning as a database.
- */
-
 'use strict';
 
 /* Expose. */
