@@ -36,12 +36,12 @@ var mammals = new DatalistInterface([
   'black and rufous elephant shrew'
 ]);
 
-mammals.is('human'); // true
-mammals.is('unicorn'); // false
+mammals.is('human'); //=> true
+mammals.is('unicorn'); //=> false
 
-mammals.add('unicorn').is('unicorn'); // true
+mammals.add('unicorn').is('unicorn'); //=> true
 
-mammals.remove('unicorn').is('unicorn'); // false
+mammals.remove('unicorn').is('unicorn'); //=> false
 ```
 
 ## API
@@ -67,8 +67,8 @@ Check if `value` is in the list.
 ###### Example
 
 ```js
-fish.is('shark'); // true
-fish.is('human'); // false
+fish.is('shark'); //=> true
+fish.is('human'); //=> false
 ```
 
 ### `DatalistInterface#add([value...])`
@@ -102,7 +102,7 @@ Return the list as an `Array`.
 ###### Example
 
 ```js
-fish.all(); // ['shark', 'tuna', 'red lionfish']
+fish.all(); //=> ['shark', 'tuna', 'red lionfish']
 ```
 
 ### `DatalistInterface#toString()`
@@ -112,8 +112,13 @@ Return the list as a `string`.
 ###### Example
 
 ```js
-fish.toString(); // 'shark,tuna,red lionfish'
+fish.toString(); //=> 'shark,tuna,red lionfish'
 ```
+
+## Related
+
+*   [`datamap-interface`](https://github.com/wooorm/datamap-interface)
+    — Simple interface for a map
 
 ## License
 
