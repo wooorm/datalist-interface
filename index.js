@@ -8,8 +8,11 @@ var proto = DatalistInterface.prototype;
 
 proto.add = add;
 proto.remove = remove;
-proto.is = proto.has = is;
-proto.all = proto.valueOf = proto.toJSON = all;
+proto.is = is;
+proto.has = is;
+proto.all = all;
+proto.valueOf = all;
+proto.toJSON = all;
 proto.toString = toString;
 
 /**
