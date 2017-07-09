@@ -1,10 +1,8 @@
 'use strict';
 
-/* Dependencies. */
 var test = require('tape');
 var Interface = require('./');
 
-/* Tests. */
 test('#is(value)', function (t) {
   var fish = new Interface(['shark', 'tuna']);
 

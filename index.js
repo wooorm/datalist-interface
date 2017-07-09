@@ -1,9 +1,7 @@
 'use strict';
 
-/* Expose. */
 module.exports = DatalistInterface;
 
-/* Methods. */
 var proto = DatalistInterface.prototype;
 
 proto.add = add;
@@ -15,23 +13,13 @@ proto.valueOf = all;
 proto.toJSON = all;
 proto.toString = toString;
 
-/**
- * An interface for a list of items.
- *
- * @constructor
- * @param {Array.<*>} values
- */
+/* An interface for a list of items. */
 function DatalistInterface(values) {
   this.values = [];
   this.add.apply(this, values);
 }
 
-/**
- * Add all arguments.
- *
- * @this DatalistInterface
- * @return {DatalistInterface} - Self.
- */
+/* Add all arguments. */
 function add(/* values... */) {
   var self = this;
 
@@ -40,12 +28,7 @@ function add(/* values... */) {
   return self;
 }
 
-/**
- * Remove all arguments.
- *
- * @this DatalistInterface
- * @return {DatalistInterface} - Self.
- */
+/* Remove all arguments. */
 function remove(/* values... */) {
   var values = this.values;
   var index = arguments.length;
@@ -62,33 +45,17 @@ function remove(/* values... */) {
   return this;
 }
 
-/**
- * Whether or not `value` is in context.
- *
- * @this DatalistInterface
- * @param {*} value
- * @return {boolean}
- */
+/* Whether or not `value` is in context. */
 function is(value) {
   return this.values.indexOf(value) !== -1;
 }
 
-/**
- * Get all values.
- *
- * @this DatalistInterface
- * @return {Array.<*>}
- */
+/* Get all values. */
 function all() {
   return this.values.concat();
 }
 
-/**
- * Stringify all values.
- *
- * @this DatalistInterface
- * @return {string}
- */
+/* Stringify all values. */
 function toString() {
   return this.values.toString();
 }
