@@ -13,7 +13,7 @@ npm install datalist-interface
 ## Usage
 
 ```js
-var DatalistInterface = require('datalist-interface');
+var DatalistInterface = require('datalist-interface')
 
 var mammals = new DatalistInterface([
   'common vampire bat',
@@ -34,14 +34,14 @@ var mammals = new DatalistInterface([
   'giant armadillo',
   'plains zebra',
   'black and rufous elephant shrew'
-]);
+])
 
-mammals.is('human'); //=> true
-mammals.is('unicorn'); //=> false
+mammals.is('human') // => true
+mammals.is('unicorn') // => false
 
-mammals.add('unicorn').is('unicorn'); //=> true
+mammals.add('unicorn').is('unicorn') // => true
 
-mammals.remove('unicorn').is('unicorn'); //=> false
+mammals.remove('unicorn').is('unicorn') // => false
 ```
 
 ## API
@@ -53,9 +53,9 @@ Create a new instance.  Values are passed to [`#add()`][add].
 ###### Example
 
 ```js
-var DatalistInterface = require('datalist-interface');
+var DatalistInterface = require('datalist-interface')
 
-var fish = new DatalistInterface(['shark', 'tuna']);
+var fish = new DatalistInterface(['shark', 'tuna'])
 ```
 
 ### `DatalistInterface#is(value)`
@@ -67,8 +67,8 @@ Check if `value` is in the list.
 ###### Example
 
 ```js
-fish.is('shark'); //=> true
-fish.is('human'); //=> false
+fish.is('shark') // => true
+fish.is('human') // => false
 ```
 
 ### `DatalistInterface#add([value...])`
@@ -78,7 +78,7 @@ Add each value to `list`.
 ###### Example
 
 ```js
-fish.add('giant grouper', 'red lionfish');
+fish.add('giant grouper', 'red lionfish')
 ```
 
 ### `DatalistInterface#remove([value...])`
@@ -88,7 +88,7 @@ Remove each value from `list`.
 ###### Example
 
 ```js
-fish.remove('giant grouper', 'reindeer');
+fish.remove('giant grouper', 'reindeer')
 ```
 
 ### `DatalistInterface#all()`
@@ -102,7 +102,7 @@ Return the list as an `Array`.
 ###### Example
 
 ```js
-fish.all(); //=> ['shark', 'tuna', 'red lionfish']
+fish.all() // => ['shark', 'tuna', 'red lionfish']
 ```
 
 ### `DatalistInterface#toString()`
@@ -112,7 +112,7 @@ Return the list as a `string`.
 ###### Example
 
 ```js
-fish.toString(); //=> 'shark,tuna,red lionfish'
+fish.toString() // => 'shark,tuna,red lionfish'
 ```
 
 ## Related
