@@ -5,3 +5,4 @@ coverage/
 node_modules/
 datalist-interface.js
 datalist-interface.min.js
+yarn.lock
