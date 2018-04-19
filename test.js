@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('tape');
-var Interface = require('./');
+var Interface = require('.');
 
 test('#is(value)', function (t) {
   var fish = new Interface(['shark', 'tuna']);
