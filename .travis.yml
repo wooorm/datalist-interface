@@ -1,11 +1,12 @@
 language: node_js
 node_js:
-- '4.0'
-- '8.0'
+- lts/boron
+- node
 sudo: false
 after_script: bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: Y4+OuFy2n4MrYXbbd1cTYhXpaSVpT89XNauz5tuTsB7fJxRzJiTviLkZtEzWOKmFAxKusH8G7IWz3jvDSloPIEdm/N15vHeGl4d7WhGmQ/BfOi8LtPEdk6HTHTZ0+GvT4vVF13J4dJhxmZnalX0t5UWkzxKQafTI/4yQkqs1X4E=
   file:
@@ -13,4 +14,3 @@ deploy:
     - "datalist-interface.min.js"
   on:
     tags: true
-    node: '8.0'
