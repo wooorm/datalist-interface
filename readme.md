@@ -1,4 +1,9 @@
-# datalist-interface [![Build Status][travis-badge]][travis] [![Coverage Status][codecov-badge]][codecov]
+# datalist-interface
+
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
 
 A simple interface for a list.
 
@@ -126,13 +131,21 @@ fish.toString() // => 'shark,tuna,red lionfish'
 
 <!-- Definitions -->
 
-[travis-badge]: https://img.shields.io/travis/wooorm/datalist-interface.svg
+[build-badge]: https://img.shields.io/travis/wooorm/datalist-interface.svg
 
-[travis]: https://travis-ci.org/wooorm/datalist-interface
+[build]: https://travis-ci.org/wooorm/datalist-interface
 
-[codecov-badge]: https://img.shields.io/codecov/c/github/wooorm/datalist-interface.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/datalist-interface.svg
 
-[codecov]: https://codecov.io/github/wooorm/datalist-interface
+[coverage]: https://codecov.io/github/wooorm/datalist-interface
+
+[downloads-badge]: https://img.shields.io/npm/dm/datalist-interface.svg
+
+[downloads]: https://www.npmjs.com/package/datalist-interface
+
+[size-badge]: https://img.shields.io/bundlephobia/minzip/datalist-interface.svg
+
+[size]: https://bundlephobia.com/result?p=datalist-interface
 
 [npm]: https://docs.npmjs.com/cli/install
 
