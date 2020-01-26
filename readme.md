@@ -5,17 +5,17 @@
 [![Downloads][downloads-badge]][downloads]
 [![Size][size-badge]][size]
 
-A simple interface for a list.
+A basic interface for a list.
 
-## Installation
+## Install
 
 [npm][]:
 
-```bash
+```sh
 npm install datalist-interface
 ```
 
-## Usage
+## Use
 
 ```js
 var DatalistInterface = require('datalist-interface')
@@ -53,7 +53,8 @@ mammals.remove('unicorn').is('unicorn') // => false
 
 ### `DatalistInterface([value...])`
 
-Create a new instance.  Values are passed to [`#add()`][add].
+Create a new instance.
+Values are passed to [`#add()`][add].
 
 ###### Example
 
