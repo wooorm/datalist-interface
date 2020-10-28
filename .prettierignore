@@ -1,3 +1,5 @@
 coverage/
 datalist-interface.js
 datalist-interface.min.js
+*.json
+*.md

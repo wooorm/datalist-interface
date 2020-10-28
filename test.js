@@ -3,7 +3,7 @@
 var test = require('tape')
 var Interface = require('.')
 
-test('#is(value)', function(t) {
+test('#is(value)', function (t) {
   var fish = new Interface(['shark', 'tuna'])
 
   t.equal(
@@ -21,7 +21,7 @@ test('#is(value)', function(t) {
   t.end()
 })
 
-test('#toString()', function(t) {
+test('#toString()', function (t) {
   var fish = new Interface(['shark', 'tuna'])
 
   t.equal(
@@ -33,7 +33,7 @@ test('#toString()', function(t) {
   t.end()
 })
 
-test('#all()', function(t) {
+test('#all()', function (t) {
   var mammals = new Interface(['colugo', 'human'])
   var all = mammals.all()
 
@@ -41,7 +41,7 @@ test('#all()', function(t) {
 
   t.deepEqual(all, ['colugo', 'human'], 'should return all values in context')
 
-  t.test('should be immutable', function(st) {
+  t.test('should be immutable', function (st) {
     all.push('unicorn')
 
     st.equal(mammals.is('unicorn'), false)
@@ -52,7 +52,7 @@ test('#all()', function(t) {
   t.end()
 })
 
-test('#add() and #remove()', function(t) {
+test('#add() and #remove()', function (t) {
   var mammals = new Interface(['colugo', 'human'])
 
   t.equal(mammals.add('unicorn'), mammals, '`add` should return self')
@@ -79,5 +79,5 @@ test('#add() and #remove()', function(t) {
     'should ignore removing non-existing `value`'
   )
 
-  t.test()
+  t.end()
 })
