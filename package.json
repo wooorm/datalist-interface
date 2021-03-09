@@ -1,6 +1,6 @@
 {
   "name": "datalist-interface",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "Simple interface for a list functioning as a database",
   "license": "MIT",
   "keywords": [
