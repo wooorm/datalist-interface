@@ -9,6 +9,9 @@ A basic interface for a list.
 
 ## Install
 
+This package is ESM only: Node 12+ is needed to use it and it must be `import`ed
+instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -18,7 +21,7 @@ npm install datalist-interface
 ## Use
 
 ```js
-var DatalistInterface = require('datalist-interface')
+import {DatalistInterface} from 'datalist-interface'
 
 var mammals = new DatalistInterface([
   'common vampire bat',
@@ -51,6 +54,9 @@ mammals.remove('unicorn').is('unicorn') // => false
 
 ## API
 
+This package exports the following identifiers: `DatalistInterface`.
+There is no default export.
+
 ### `DatalistInterface([value...])`
 
 Create a new instance.
@@ -59,7 +65,7 @@ Values are passed to [`#add()`][add].
 ###### Example
 
 ```js
-var DatalistInterface = require('datalist-interface')
+import {DatalistInterface} from 'datalist-interface'
 
 var fish = new DatalistInterface(['shark', 'tuna'])
 ```

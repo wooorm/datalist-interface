@@ -1,7 +1,3 @@
-'use strict'
-
-module.exports = DatalistInterface
-
 var proto = DatalistInterface.prototype
 
 proto.add = add
@@ -14,16 +10,16 @@ proto.toJSON = all
 proto.toString = toString
 
 // An interface for a list of items.
-function DatalistInterface(values) {
+export function DatalistInterface(values) {
   this.values = []
-  this.add.apply(this, values)
+  this.add(...values)
 }
 
 // Add all arguments.
 function add(/* values... */) {
   var self = this
 
-  self.values.push.apply(self.values, arguments)
+  self.values.push(...arguments)
 
   return self
 }
