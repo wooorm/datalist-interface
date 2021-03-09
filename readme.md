@@ -132,9 +132,9 @@ fish.toString() // => 'shark,tuna,red lionfish'
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/wooorm/datalist-interface.svg
+[build-badge]: https://github.com/wooorm/datalist-interface/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/wooorm/datalist-interface
+[build]: https://github.com/wooorm/datalist-interface/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/datalist-interface.svg
 
