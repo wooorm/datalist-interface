@@ -1,57 +1,81 @@
-var proto = DatalistInterface.prototype
-
-proto.add = add
-proto.remove = remove
-proto.is = is
-proto.has = is
-proto.all = all
-proto.valueOf = all
-proto.toJSON = all
-proto.toString = toString
-
-// An interface for a list of items.
-export function DatalistInterface(values) {
-  this.values = []
-  this.add(...values)
-}
-
-// Add all arguments.
-function add(/* values... */) {
-  var self = this
-
-  self.values.push(...arguments)
-
-  return self
-}
-
-// Remove all arguments.
-function remove(/* values... */) {
-  var values = this.values
-  var index = arguments.length
-  var position
-
-  while (index--) {
-    position = values.indexOf(arguments[index])
-
-    if (position !== -1) {
-      values.splice(position, 1)
-    }
+export class DatalistInterface {
+  /**
+   * Create a new data list.
+   * Values are passed to `#add()`.
+   *
+   * @constructor
+   * @param {Iterable} values
+   */
+  constructor(values) {
+    this.values = []
+    this.add(...values)
   }
 
-  return this
-}
+  /**
+   * Add all arguments.
+   */
+  add(/* values... */) {
+    this.values.push(...arguments)
+    return this
+  }
 
-// Whether or not `value` is in context.
-function is(value) {
-  return this.values.indexOf(value) !== -1
-}
+  /**
+   * Remove all arguments.
+   */
+  remove(/* values... */) {
+    var index = arguments.length
+    var position
 
-// Get all values.
-function all() {
-  return this.values.concat()
-}
+    while (index--) {
+      position = this.values.indexOf(arguments[index])
 
-// Stringify all values.
-function toString() {
-  return this.values.toString()
+      if (position !== -1) {
+        this.values.splice(position, 1)
+      }
+    }
+
+    return this
+  }
+
+  /**
+   * Check whether `value` is in this list.
+   */
+  is(value) {
+    return this.values.indexOf(value) !== -1
+  }
+
+  /**
+   * Check whether `value` is in this list.
+   */
+  has(value) {
+    return this.is(value)
+  }
+
+  /**
+   * Get all values.
+   */
+  all() {
+    return this.values.concat()
+  }
+
+  /**
+   * Get all values.
+   */
+  valueOf() {
+    return this.all()
+  }
+
+  /**
+   * Get all values.
+   */
+  toJSON() {
+    return this.all()
+  }
+
+  /**
+   * Serialize all values.
+   */
+  toString() {
+    return this.values.toString()
+  }
 }

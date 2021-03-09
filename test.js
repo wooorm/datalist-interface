@@ -16,6 +16,12 @@ test('#is(value)', function (t) {
     'should return false if a value is not in the database'
   )
 
+  t.equal(
+    fish.is('unicorn'),
+    fish.has('unicorn'),
+    '`has` should be an alias for `is`'
+  )
+
   t.end()
 })
 
@@ -46,6 +52,18 @@ test('#all()', function (t) {
     st.equal(mammals.all().indexOf('unicorn'), -1)
     st.end()
   })
+
+  t.deepEqual(
+    mammals.all(),
+    mammals.valueOf(),
+    '`valueOf` should be an alias for `all`'
+  )
+
+  t.deepEqual(
+    mammals.all(),
+    mammals.toJSON(),
+    '`toJSON` should be an alias for `all`'
+  )
 
   t.end()
 })
