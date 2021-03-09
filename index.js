@@ -49,7 +49,7 @@ export class DatalistInterface {
 
   /**
    * Check whether `value` is in this list.
-   * 
+   *
    * @param {Item} value
    * @return {boolean}
    */
@@ -59,7 +59,7 @@ export class DatalistInterface {
 
   /**
    * Check whether `value` is in this list.
-   * 
+   *
    * @param {Item} value
    * @return {boolean}
    */
@@ -69,7 +69,7 @@ export class DatalistInterface {
 
   /**
    * Get all values.
-   * 
+   *
    * @return {Item[]}
    */
   all() {
@@ -78,7 +78,7 @@ export class DatalistInterface {
 
   /**
    * Get all values.
-   * 
+   *
    * @return {Item[]}
    */
   valueOf() {
@@ -87,7 +87,7 @@ export class DatalistInterface {
 
   /**
    * Get all values.
-   * 
+   *
    * @return {Item[]}
    */
   toJSON() {
@@ -96,7 +96,7 @@ export class DatalistInterface {
 
   /**
    * Serialize all values.
-   * 
+   *
    * @return {string}
    */
   toString() {
