@@ -11,6 +11,7 @@ export class DatalistInterface {
    * @param {Item[]} values
    */
   constructor(values) {
+    /** @type Item[] */
     this.values = []
     this.add(...values)
   }
