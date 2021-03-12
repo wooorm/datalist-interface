@@ -35,6 +35,7 @@ export class DatalistInterface {
    */
   remove(...values) {
     var index = values.length
+    /** @type number */
     var position
 
     while (index--) {
