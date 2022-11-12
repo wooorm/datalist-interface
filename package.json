@@ -1,6 +1,6 @@
 {
   "name": "datalist-interface",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Legacy package (use `Set` instead)",
   "license": "MIT",
   "keywords": [
