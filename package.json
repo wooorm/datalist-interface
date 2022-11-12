@@ -1,7 +1,7 @@
 {
   "name": "datalist-interface",
   "version": "2.1.1",
-  "description": "Simple interface for a list functioning as a database",
+  "description": "Legacy package (use `Set` instead)",
   "license": "MIT",
   "keywords": [
     "data",
