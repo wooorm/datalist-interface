@@ -2,7 +2,7 @@ import test from 'tape'
 import {DatalistInterface} from './index.js'
 
 test('#is(value)', function (t) {
-  var fish = new DatalistInterface(['shark', 'tuna'])
+  const fish = new DatalistInterface(['shark', 'tuna'])
 
   t.equal(
     fish.is('shark'),
@@ -26,7 +26,7 @@ test('#is(value)', function (t) {
 })
 
 test('#toString()', function (t) {
-  var fish = new DatalistInterface(['shark', 'tuna'])
+  const fish = new DatalistInterface(['shark', 'tuna'])
 
   t.equal(
     fish.toString(),
@@ -38,8 +38,8 @@ test('#toString()', function (t) {
 })
 
 test('#all()', function (t) {
-  var mammals = new DatalistInterface(['colugo', 'human'])
-  var all = mammals.all()
+  const mammals = new DatalistInterface(['colugo', 'human'])
+  const all = mammals.all()
 
   t.ok(Array.isArray(all), 'should return an array')
 
@@ -69,7 +69,7 @@ test('#all()', function (t) {
 })
 
 test('#add() and #remove()', function (t) {
-  var mammals = new DatalistInterface(['colugo', 'human'])
+  const mammals = new DatalistInterface(['colugo', 'human'])
 
   t.equal(mammals.add('unicorn'), mammals, '`add` should return self')
   t.equal(mammals.is('unicorn'), true, 'should add values')

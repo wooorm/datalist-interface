@@ -34,12 +34,10 @@ export class DatalistInterface {
    * @return {this}
    */
   remove(...values) {
-    var index = values.length
-    /** @type number */
-    var position
+    let index = values.length
 
     while (index--) {
-      position = this.values.indexOf(values[index])
+      const position = this.values.indexOf(values[index])
 
       if (position !== -1) {
         this.values.splice(position, 1)
@@ -56,7 +54,7 @@ export class DatalistInterface {
    * @return {boolean}
    */
   is(value) {
-    return this.values.indexOf(value) !== -1
+    return this.values.includes(value)
   }
 
   /**
